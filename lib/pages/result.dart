@@ -16,10 +16,15 @@ class _ResultPageState extends State<ResultPage> {
     final prefs = await SharedPreferences.getInstance();
     await prefs.clear(); // Menghapus semua data sesi
 
+<<<<<<< HEAD
     Navigator.of(context).pushAndRemoveUntil(
       MaterialPageRoute(builder: (context) => HomePage()),
       (Route<dynamic> route) => false,
     );
+=======
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => HomePage()));
+>>>>>>> 3dd74a9fa3470eac594e23964268960a4c0718cf
   }
 
   @override
