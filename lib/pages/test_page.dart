@@ -216,7 +216,6 @@ Future<void> sendDataToSheet(String nama, int nilai) async {
       headers: {"Content-Type": "application/json"},
       body: jsonEncode({
         "nama": nama,
-<<<<<<< HEAD
         "nilai": nilai.toString(), // Pastikan nilai dikirim dengan benar
       }),
     );
@@ -224,12 +223,6 @@ Future<void> sendDataToSheet(String nama, int nilai) async {
     print("nama: " + nama);
     print("nilai: " + nilai.toString());
 
-=======
-        "nilai": nilai,
-      }),
-    );
-
->>>>>>> 3dd74a9fa3470eac594e23964268960a4c0718cf
     if (response.statusCode == 302) {
       String? redirectUrl = response.headers['location'];
       if (redirectUrl != null) {
@@ -241,20 +234,12 @@ Future<void> sendDataToSheet(String nama, int nilai) async {
           headers: {"Content-Type": "application/json"},
           body: jsonEncode({
             "nama": nama,
-<<<<<<< HEAD
             "nilai": nilai.toString(),
           }),
         );
 
         print(
             "Data berhasil dikirim setelah redirect: ${redirectedResponse.body}");
-=======
-            "nilai": nilai,
-          }),
-        );
-
-        print("Data berhasil dikirim setelah redirect: ${redirectedResponse.body}");
->>>>>>> 3dd74a9fa3470eac594e23964268960a4c0718cf
       } else {
         print("Redirect 302 tetapi tidak ada lokasi tujuan.");
       }
@@ -267,8 +252,4 @@ Future<void> sendDataToSheet(String nama, int nilai) async {
   } catch (e) {
     print("Error: $e");
   }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 3dd74a9fa3470eac594e23964268960a4c0718cf
